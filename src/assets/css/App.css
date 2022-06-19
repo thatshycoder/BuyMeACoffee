@@ -41,6 +41,13 @@ img.coffeeImage {
   font-family: 'Lobster';
 }
 
+.metamask-warning {
+  text-align: center;
+  margin-top: 20px;
+  color: #dc2525;
+  text-decoration: underline;
+}
+
 .message {
   padding: 20px;
   background: transparent;
