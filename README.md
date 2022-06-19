@@ -8,8 +8,8 @@ Built with React.
 
 Install app with 
 
-`npm run start`
+`npm install`
 
 Run 
 
-`npm run start`
+`npm run serve`
