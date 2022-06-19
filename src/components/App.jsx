@@ -18,10 +18,8 @@ export default function App() {
 
       // Check if ethereum object is injected
       if (!ethereum) {
-        console.log('Make sure you have metamask!');
+        console.log('Make sure you have metamask wallet installed!');
         return false;
-      } else {
-        console.log('We have the ethereum object', ethereum);
       }
 
       // Check if we're authorized to access the user's wallet
@@ -30,6 +28,7 @@ export default function App() {
       if (accounts.length !== 0) {
         const account = accounts[0];
         console.log('Found an authorized account:', account);
+
         setCurrentAccount(account);
       } else {
         console.log('No authorized account found');
@@ -47,7 +46,8 @@ export default function App() {
       const { ethereum } = window;
 
       if (!ethereum) {
-        alert('Get MetaMask!');
+
+        alert('You need to install metamask wallet');
         return;
       }
 
@@ -57,12 +57,14 @@ export default function App() {
 
       console.log('Connected', accounts[0]);
       setCurrentAccount(accounts[0]);
+
     } catch (error) {
       console.log(error);
     }
   };
 
   const ready = () => {
+    
     setReadyToBuy(true);
 
     if (message.length != 0) {
@@ -122,7 +124,7 @@ export default function App() {
         </div>
 
         <div className="bio">
-          <h3>Hi there! I'm Halfzombie</h3>
+          <h3>Hi there! I'm Itiel</h3>
           <p></p>
           <p>I'm learning to go outside my comfort zone. 🥺👉🏽👈🏽</p>
           <p>Feel like cheering me on? 😀 </p>
@@ -142,6 +144,9 @@ export default function App() {
           <button className="connectWalletButton" onClick={connectWallet}>
             Connect Wallet
           </button>
+        )}
+        {!checkIfWalletIsConnected() && (
+          <p className="metamask-warning">Make sure you have metamask!</p>
         )}
       </div>
     </div>
