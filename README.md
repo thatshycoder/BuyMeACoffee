@@ -12,4 +12,4 @@ Install app with
 
 Run 
 
-`npm run serve`
+`npm run dev`
